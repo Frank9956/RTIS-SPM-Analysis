@@ -111,7 +111,7 @@
 <body>
 
 <div class="main-heading">East Central Railway, Elect(TRO) Dhanbad</div>
-<div class="sub-heading">SPM Analysis through RTIS data for express</div>
+<div class="sub-heading">SPM Analysis through RTIS data for EXPRESS</div>
 
 <div class="controls">
 
@@ -516,11 +516,10 @@ document.getElementById("plotGraph").addEventListener("click", () => {
       res["idx"+d] = foundIdx[d] ?? -1;
     });
 
-    if(res.s1000 > 50) irregularities.push(`Station ${res.station}: Speed @1000 m = ${res.s1000}`);
-    if(res.s100 >= 20)
-  irregularities.push(`Station ${res.station}: Speed @100 m = ${res.s100}`);
-
-  if(res.s10 >= 10) irregularities.push(`Station ${res.station}: Speed @10 m = ${res.s10}`);
+    if(res.s1000 > 60) irregularities.push(`Station ${res.station}: Speed @1000 m = ${res.s1000}`);
+    if(res.s500 > 30) irregularities.push(`Station ${res.station}: Speed @500 m = ${res.s500}`);
+    if(res.s100 > 15) irregularities.push(`Station ${res.station}: Speed @100 m = ${res.s100}`);
+    if(res.s10 > 10) irregularities.push(`Station ${res.station}: Speed @10 m = ${res.s10}`);
 
     return res;
   });
