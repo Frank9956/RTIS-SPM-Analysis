@@ -516,7 +516,7 @@ document.getElementById("plotGraph").addEventListener("click", () => {
       res["idx"+d] = foundIdx[d] ?? -1;
     });
 
-    if(res.s1000 > 45) irregularities.push(`Station ${res.station}: Speed @1000 m = ${res.s1000}`);
+    if(res.s1000 > 40) irregularities.push(`Station ${res.station}: Speed @1000 m = ${res.s1000}`);
     if(res.s500 > 20) irregularities.push(`Station ${res.station}: Speed @500 m = ${res.s500}`);
     if(res.s100 > 10) irregularities.push(`Station ${res.station}: Speed @100 m = ${res.s100}`);
     if(res.s10 > 5) irregularities.push(`Station ${res.station}: Speed @10 m = ${res.s10}`);
@@ -552,7 +552,7 @@ document.getElementById("plotGraph").addEventListener("click", () => {
           const raw = r["s"+d];
           const v = (raw === "-" ? "-" : Math.round(raw));
           if(v === "-") return `<td>-</td>`;
-          if(d===1000 && v> 45) return `<td class="highlight-irregular">${v}</td>`;
+          if(d===1000 && v> 40) return `<td class="highlight-irregular">${v}</td>`;
           if(d===500  && v> 20) return `<td class="highlight-alerti">${v}</td>`;
           if(d===100  && v> 10) return `<td class="highlight-alerti">${v}</td>`;
           if(d===10  && v> 5) return `<td class="highlight-alert">${v}</td>`;
